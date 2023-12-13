@@ -14,8 +14,13 @@
 <link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
 <!-- JQVMap -->
 <link rel="stylesheet" href="{{asset('assets/plugins/jqvmap/jqvmap.min.css')}}">
+
 <!-- Theme style -->
-<link rel="stylesheet" href="{{asset('assets/css/adminlte.min.css')}}">
+{{-- for arabic website theme style  --}}
+<link rel="stylesheet" href="{{asset('assets/css/adminlte_RTL.css')}}">
+{{-- for english website theme style  --}}
+{{-- <link rel="stylesheet" href="{{asset('assets/css/adminlte.min.css')}}">  --}}
+
 <!-- overlayScrollbars -->
 <link rel="stylesheet" href="{{asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
 <!-- Daterange picker -->

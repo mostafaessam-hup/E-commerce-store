@@ -19,8 +19,6 @@ class CheckAdmin
         if (auth()->user()->type == 'admin') {
             return $next($request);
         }
-        Auth::logout();
-
         return redirect()->route('home');
     }
 }

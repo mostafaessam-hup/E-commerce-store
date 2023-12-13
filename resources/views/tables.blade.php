@@ -11,11 +11,11 @@ tables
 @endsection
 
 @section('title_page1')
-tables
+الجداول
 @endsection
 
 @section('title_page2')
-tables content
+محتوي الجداول
 @endsection
 
 @section('content')
