@@ -30,3 +30,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/tables', function () {
     return view('tables');
 });
+
+Route::get('settings', function () {
+    return view('dashboard.settings.index');
+});

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\IndexController;
+use App\Http\Controllers\Dashboard\SettingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -16,5 +17,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-route::get('/',[IndexController::class,'index'])->name('admin');
+Route::get('/',[IndexController::class,'index'])->name('admin');
+Route::put('settings/{setting}/update',[SettingController::class,'update'])->name('dashboard.settings.update');
+Route::get('settings',[SettingController::class,'index'])->name('dashboard.settings.index');
 
