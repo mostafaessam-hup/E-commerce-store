@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\SettingUpdateRequest;
 use App\Models\Setting;
+use App\Utils\ImageUpload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
@@ -17,9 +19,17 @@ class SettingController extends Controller
     public function update(SettingUpdateRequest $request, Setting $setting)
     {
         $setting->update($request->validated());
-        $logoName = time() . '.' . $request->logo->extension();
-        $request->logo->move(public_path('images'), $logoName);
-        $setting->update(['logo' =>'images/'. $logoName]);
-        return redirect()->route('dashboard.settings.index')->with('success', 'تم التحديث بنجاح ')->with('logo', $logoName);
+
+        if ($request->has('logo')) {
+            $logo = ImageUpload::uploadImage($request->logo, 'logos/');
+            $setting->update(['logo' => 'storage/' . $logo]);
+        }
+
+        if ($request->has('favicon')) {
+            $favicon = ImageUpload::uploadImage($request->favicon);
+            $setting->update(['favicon' => 'storage/' . $favicon]);
+        }
+
+        return redirect()->route('dashboard.settings.index')->with('success', 'تم التحديث بنجاح ');
     }
 }
