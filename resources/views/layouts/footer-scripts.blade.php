@@ -21,15 +21,26 @@
 <script type="text/javascript" src="{{ URL::asset('assets/plugins/moment/moment.min.js' )}}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/plugins/daterangepicker/daterangepicker.js' )}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script type="text/javascript" src="{{ URL::asset('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' )}}"></script>
+<script type="text/javascript"
+    src="{{ URL::asset('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' )}}"></script>
 <!-- Summernote -->
 <script type="text/javascript" src="{{ URL::asset('assets/plugins/summernote/summernote-bs4.min.js' )}}"></script>
 <!-- overlayScrollbars -->
-<script type="text/javascript" src="{{ URL::asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' )}}"></script>
+<script type="text/javascript"
+    src="{{ URL::asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' )}}"></script>
 <!-- AdminLTE App -->
 <script type="text/javascript" src="{{ URL::asset('assets/js/adminlte.js' )}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script type="text/javascript" src="{{ URL::asset('assets/js/demo.js' )}}"></script>
+<!--  dropify for uploading images style-->
+<script type="text/javascript" src="{{ URL::asset('assets/js/dropify.js' )}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script type="text/javascript" src="{{ URL::asset('assets/js/pages/dashboard.js' )}}"></script>
+<!-- font awesome for icons -->
+<script src="https://kit.fontawesome.com/a96892a3e6.js" crossorigin="anonymous"></script>
+<!-- dropify -->
+<script>
+    $('.dropify').dropify();
+</script>
+
 @yield('scripts')

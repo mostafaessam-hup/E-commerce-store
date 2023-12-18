@@ -76,6 +76,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('dashboard.settings.index')}}" class="nav-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>
+                            اعدادات الموقع 
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>

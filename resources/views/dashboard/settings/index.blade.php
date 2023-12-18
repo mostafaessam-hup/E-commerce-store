@@ -48,12 +48,16 @@
 
                                 <div class="form-group">
                                     <label for="validationCustom05" class="col-form-label pt-0">لوجو الموقع</label>
-                                    <input class="form-control" id="validationCustom05" type="file" name="logo">
+                                    <input class="form-control dropify" id="validationCustom05" type="file" name="logo"
+                                        data-default-file="{{asset($setting->logo)}}" data-width="200">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label">الصورة المصغرة</label>
-                                    <input class="form-control" id="validationCustom05" type="file" name="favicon">
+                                    <input class="form-control dropify" id="validationCustom05" type="file"
+                                        name="favicon" data-default-file="{{asset($setting->favicon)}}"
+                                        data-height="50">
+
                                 </div>
 
                                 <div class="form-group">
@@ -71,45 +75,53 @@
                                 <div class="form-group">
                                     <label for="validationCustom02" class="col-form-label"><span>*</span>
                                         البريد الإلكتروني </label>
-                                    <input class="form-control" id="validationCustom02" type="text" name="email" value="{{$setting->email}}">
+                                    <input class="form-control" id="validationCustom02" type="text" name="email"
+                                        value="{{$setting->email}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0">رقم الهاتف</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="phone" value="{{$setting->phone}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="phone"
+                                        value="{{$setting->phone}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0">العنوان</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="address"value="{{$setting->address}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="address"
+                                        value="{{$setting->address}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0">رابط الفيس
                                         بوك</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="facebook"value="{{$setting->facebook}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="facebook"
+                                        value="{{$setting->facebook}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0">رابط تويتر</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="twitter"value="{{$setting->twitter}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="twitter"
+                                        value="{{$setting->twitter}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0">حساب
                                         الانستجرام</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="instagram"value="{{$setting->instagram}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="instagram"
+                                        value="{{$setting->instagram}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0"> اليوتيوب</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="youtube"value="{{$setting->youtube}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="youtube"
+                                        value="{{$setting->youtube}}">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="validationCustomtitle" class="col-form-label pt-0">التيك توك</label>
-                                    <input class="form-control" id="validationCustomtitle" type="text" name="tiktok"value="{{$setting->tiktok}}">
+                                    <input class="form-control" id="validationCustomtitle" type="text" name="tiktok"
+                                        value="{{$setting->tiktok}}">
                                 </div>
 
                                 <div class="form-group">

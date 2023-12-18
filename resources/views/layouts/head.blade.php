@@ -12,14 +12,16 @@
     href="{{asset('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
 <!-- iCheck -->
 <link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+<!--  dropify for uploading images style-->
+<link rel="stylesheet" href="{{asset('assets/css/dropify.css')}}">
 <!-- JQVMap -->
 <link rel="stylesheet" href="{{asset('assets/plugins/jqvmap/jqvmap.min.css')}}">
 
 <!-- Theme style -->
-{{-- for arabic website theme style  --}}
+{{-- for arabic website theme style --}}
 <link rel="stylesheet" href="{{asset('assets/css/adminlte_RTL.css')}}">
-{{-- for english website theme style  --}}
-{{-- <link rel="stylesheet" href="{{asset('assets/css/adminlte.min.css')}}">  --}}
+{{-- for english website theme style --}}
+{{--<link rel="stylesheet" href="{{asset('assets/css/adminlte.min.css')}}"> --}}
 
 <!-- overlayScrollbars -->
 <link rel="stylesheet" href="{{asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">

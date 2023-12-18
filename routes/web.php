@@ -31,6 +31,6 @@ Route::get('/tables', function () {
     return view('tables');
 });
 
-Route::get('settings', function () {
-    return view('dashboard.settings.index');
-});
+// Route::get('settings', function () {
+//     return view('dashboard.settings.index');
+// });
