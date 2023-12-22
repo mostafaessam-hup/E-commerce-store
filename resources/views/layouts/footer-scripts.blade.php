@@ -38,6 +38,9 @@
 <script type="text/javascript" src="{{ URL::asset('assets/js/pages/dashboard.js' )}}"></script>
 <!-- font awesome for icons -->
 <script src="https://kit.fontawesome.com/a96892a3e6.js" crossorigin="anonymous"></script>
+<!--  DataTables CDN -->
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <!-- dropify -->
 <script>
     $('.dropify').dropify();

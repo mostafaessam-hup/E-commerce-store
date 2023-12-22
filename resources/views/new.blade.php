@@ -7,6 +7,9 @@
 @section('css')
 @endsection
 
+@section('pagename')
+@endsection
+
 @section('title_page1')
 
 @endsection

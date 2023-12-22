@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\IndexController;
 use App\Http\Controllers\Dashboard\SettingController;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/',[IndexController::class,'index'])->name('admin');
-Route::put('settings/{setting}/update',[SettingController::class,'update'])->name('dashboard.settings.update');
-Route::get('settings',[SettingController::class,'index'])->name('dashboard.settings.index');
-
+Route::get('/', [IndexController::class, 'index'])->name('admin');
+Route::group(['as' => 'dashboard.'], function () {
+    Route::put('settings/{setting}/update', [SettingController::class, 'update'])->name('settings.update');
+    Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::get('categories/ajax', [CategoryController::class, 'getAll'])->name('categories.getall');
+    Route::resource('categories', CategoryController::class);
+    Route::delete('categories', [CategoryController::class, 'delete'])->name('categories.delete');
+});
