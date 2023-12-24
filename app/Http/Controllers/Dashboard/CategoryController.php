@@ -20,8 +20,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $mainCategories = $this->CategoryService->getMainCategories();
-        return view('dashboard.categories.index', compact('mainCategories'));
+        return view('dashboard.categories.index');
     }
 
     public function getAll()
@@ -52,21 +51,15 @@ class CategoryController extends Controller
         return view('dashboard.categories.edit', compact('category', 'mainCategories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(CategoryRequest $request, string $id)
     {
         $this->CategoryService->update($id, $request->validated());
         return redirect()->route('dashboard.categories.index')->with('success', 'تمت الاضافة بنجاح');
     }
 
-
-
-
     public function delete(CategoryRequest $request)
     {
-        $category=$this->CategoryService->delete($request->id);
+        $this->CategoryService->delete($request->id);
         return redirect()->route('dashboard.categories.index');
     }
 }
