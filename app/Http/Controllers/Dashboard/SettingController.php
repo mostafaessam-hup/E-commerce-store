@@ -22,12 +22,12 @@ class SettingController extends Controller
 
         if ($request->has('logo')) {
             $logo = ImageUpload::uploadImage($request->logo, 'logos/');
-            $setting->update(['logo' => 'storage/' . $logo]);
+            $setting->update(['logo' =>  $logo]);
         }
 
         if ($request->has('favicon')) {
             $favicon = ImageUpload::uploadImage($request->favicon);
-            $setting->update(['favicon' => 'storage/' . $favicon]);
+            $setting->update(['favicon' =>  $favicon]);
         }
 
         return redirect()->route('dashboard.settings.index')->with('success', 'تم التحديث بنجاح ');

@@ -25,16 +25,25 @@ class CategoryRequest extends FormRequest
             case 'GET':
             case 'DELETE': {
                     return [
-                        'id'=>'required|exists:categories,id',
+                        'id' => 'required|exists:categories,id',
                     ];
                 }
 
             case 'POST': {
-                    return [];
+                    return [
+                        'name' => 'required|unique:categories,name',
+                        'parent_id' => 'nullable|exists:categories,id',
+                        'image' => 'required|nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+
+                    ];
                 }
-                
+
             case 'PUT': {
-                    return [];
+                    return [
+                        'name' => 'string',
+                        'parent_id' => 'nullable|exists:categories,id',
+                        'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+                    ];
                 }
         }
     }

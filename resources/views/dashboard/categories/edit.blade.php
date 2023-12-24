@@ -45,9 +45,9 @@ Sub Category
                             @endif
                             <div class="table-responsive table-desi">
 
-                                {{-- <form class="needs-validation"
+                                <form class="needs-validation"
                                     action="{{route('dashboard.categories.update',$category->id)}}" method="POST"
-                                    enctype="multipart/form-data"> --}}
+                                    enctype="multipart/form-data">
                                     <div class="form">
                                         @csrf
                                         @method('put')
@@ -56,29 +56,24 @@ Sub Category
                                             <input class="form-control" id="validationCustom01" type="text" name="name"
                                                 value="{{$category->name}}">
                                         </div>
-                                        {{-- @if ($category->child_count < 1) --}} <div class="form-group">
+                                        @if ($category->child_count < 1) <div class="form-group">
                                             <label for="validationCustom01" class="mb-1">القسم الرئيسي </label>
                                             <select name="parent_id" id="" class="form-control">
-                                                <option value="" @if ($category->parent_id == null) selected @endif>قسم
-                                                    رئيسي</option>
-                                                    @foreach ($mainCategories as $maincategory)
-                                                    <option value="{{ $maincategory->id }}" @if ($category->id ==
-                                                    $category->parent_id) selected @endif>{{ $category->name }}</option>
+                                                <option value="" @if ($category->parent_id == null ) selected @endif>
+                                                    قسم رئيسي </option>
+                                                @foreach ($mainCategories as $maincategory)
+                                                <option value="{{ $maincategory->id }}" @if ($maincategory->id ==
+                                                    $category->parent_id) selected @endif> {{$maincategory->name}}
+                                                </option>
                                                 @endforeach
                                             </select>
-
                                     </div>
-                                    {{-- @endif --}}
-
+                                    @endif
                                     <div class="form-group mb-0">
                                         <label for="validationCustom02" class="mb-1">الصورة :</label>
-
                                         <input class="form-control dropify" id="validationCustom02" type="file"
                                             name="image" data-default-file="{{asset($category->image)}}">
                                     </div>
-
-
-
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit">Save</button>

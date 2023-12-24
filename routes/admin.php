@@ -23,6 +23,6 @@ Route::group(['as' => 'dashboard.'], function () {
     Route::put('settings/{setting}/update', [SettingController::class, 'update'])->name('settings.update');
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
     Route::get('categories/ajax', [CategoryController::class, 'getAll'])->name('categories.getall');
-    Route::resource('categories', CategoryController::class);
+    Route::resource('categories', CategoryController::class)->except('destroy','show');
     Route::delete('categories', [CategoryController::class, 'delete'])->name('categories.delete');
 });
