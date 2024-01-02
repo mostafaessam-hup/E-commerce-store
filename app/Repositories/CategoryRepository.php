@@ -4,12 +4,13 @@ namespace App\Repositories;
 
 use App\Models\Category;
 
-class CategoryRepository
+class CategoryRepository implements RepositoryInterface
 {
     public function getMainCategories()
     {
-
-        return Category::where('parent_id', 0)->orwhere('parent_id', null)->get();
+        return Category::where('parent_id', 0)
+            ->orWhere('parent_id', null)
+            ->get();
     }
 
     public function query($relations = [])

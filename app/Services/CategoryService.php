@@ -17,6 +17,12 @@ class CategoryService
         $this->categoryRepository = $categoryRepository;
     }
 
+    public function getAll ()
+    {
+        
+        return $this->categoryRepository->query(['child'])->get();
+    }
+
     public function getMainCategories()
     {
         return $this->categoryRepository->getMainCategories();
@@ -77,4 +83,6 @@ class CategoryService
     {
         return $this->categoryRepository->delete($id);
     }
+
+    
 }
