@@ -50,8 +50,14 @@
                                 <div class="col-12">
 
                                     @if ($errors->any())
-                                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                                    @endif
+                                    @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                                <li>{{ $error }}</li>
+                                            </ul>
+                                        </div>
+                                        @endforeach
+                                @endif
 
                                     <div class="form-group">
                                         <label for="validationCustomtitle" class="col-form-label pt-0">القسم</label>
@@ -104,6 +110,13 @@
                                             الألوان المتاحة للمنتج </label>
                                         <select class="form-control colors" multiple="multiple" name="colors[]">
                                         </select>
+                                        
+                                        <div class="form-group">
+                                            <label for="validationCustom02" class="col-form-label">
+                                                الاحجام المتاحة للمنتج </label>
+                                            <select class="form-control colors" multiple="multiple" name="sizes[]">
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -132,5 +145,6 @@
     $(".colors").select2({
         tags: true
     });
+
 </script>
 @endsection

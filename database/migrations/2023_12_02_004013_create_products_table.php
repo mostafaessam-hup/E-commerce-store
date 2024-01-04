@@ -19,6 +19,8 @@ return new class extends Migration
             $table->decimal('price',8,2)->nullable();
             $table->decimal('discount_price',8,2)->nullable();
             $table->foreignId('category_id')->constrained('categories');
+            $table->text('color')->nullable();
+            $table->text('size')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

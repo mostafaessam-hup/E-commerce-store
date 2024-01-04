@@ -17,7 +17,7 @@ class ProductService
 
     public function dataTable()
     {
-        $query = $this->productRepository->query(relations: ['category'], withCount: ['productColor']);
+        $query = $this->productRepository->query(relations: ['category']);
         return  DataTables::of($query)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
@@ -45,18 +45,18 @@ class ProductService
 
             $params['image'] = ImageUpload::uploadImage($params['image']);
         }
-        $product = $this->productRepository->store($params);
 
         if (isset($params['colors'])) {
-            $params['colors'] = array_map(function($color) use ($product){
-                $colors['color']= $color;
-                $colors['product_id']=$product->id;
-                return $colors ;
-            },$params['colors']);
-            $this->productRepository->addColor($product,['colors'=> $params['colors']]);
+            $params['color'] = implode(',', $params['colors']);
+            unset($params['colors']);
         }
-        return $product;
 
+        if (isset($params['sizes'])) {
+            $params['size'] = implode(',', $params['sizes']);
+            unset($params['sizes']);
+        }
+
+        return  $this->productRepository->store($params);
     }
 
 
@@ -66,6 +66,15 @@ class ProductService
             $params['image'] = ImageUpload::uploadImage($params['image']);
         }
 
+        if (isset($params['colors'])) {
+            $params['color'] = implode(',', $params['colors']);
+            unset($params['colors']);
+        }
+
+        if (isset($params['sizes'])) {
+            $params['size'] = implode(',', $params['sizes']);
+            unset($params['sizes']);
+        }
         return $this->productRepository->update($id, $params);
     }
 

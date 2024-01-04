@@ -65,7 +65,7 @@
                                         <th>القسم </th>
                                         <th>السعر الأساسي</th>
                                         <th>التخفيض الأساسي</th>
-                                        <th>عدد الألوان المتوفرة</th>
+                                        <th> الألوان </th>
                                         <th>action</th>
 
                                     </tr>
@@ -125,8 +125,8 @@
                         className: 'text-center'
                     },
                     {
-                        data: 'product_color_count',
-                        name: 'product_color_count',
+                        data: 'color',
+                        name: 'color',
                         className: 'text-center'
                     },
                     {

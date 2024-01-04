@@ -34,6 +34,7 @@ class ProductRepository implements RepositoryInterface
     {
         $product = $this->getById($id);
         return $product->update($params);
+        
     }
 
     public function delete($id)

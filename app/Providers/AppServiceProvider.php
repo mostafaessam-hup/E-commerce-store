@@ -20,14 +20,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $setting= Setting::firstOr(function(){
-            return Setting::create(
-                [
-                    'name'=>'site_name',
-                    'description'=>'this is description'
-                ]
+        if (!app()->runningInConsole()) {
+            $setting = Setting::firstOr(function () {
+                return Setting::create(
+                    [
+                        'name' => 'site_name',
+                        'description' => 'this is description'
+                    ]
                 );
-        }) ;
-            view()->share('setting',$setting);
+            });
+            view()->share('setting', $setting);
+        }
     }
 }

@@ -5,6 +5,7 @@
 @endsection
 
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 
 @section('pagename')
@@ -104,12 +105,18 @@
                                         <input class="form-control" id="validationCustom02" type="text"
                                             name="discount_price" value="{{$product->discount_price}}">
                                     </div>
-
                                     <div class="form-group">
                                         <label for="validationCustom02" class="col-form-label">
                                             الألوان المتاحة للمنتج </label>
-                                        <select class="form-control colors" multiple="multiple" name="colors[]">
+                                        <select class="form-control colors" multiple="multiple" name="colors[]" value="{{$product->color}}">
                                         </select>
+                                        
+                                        <div class="form-group">
+                                            <label for="validationCustom02" class="col-form-label">
+                                                الاحجام المتاحة للمنتج </label>
+                                            <select class="form-control colors" multiple="multiple" name="sizes[]" value="{{$product->size}}">
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -133,4 +140,11 @@
 @endsection
 
 @section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(".colors").select2({
+        tags: true
+    });
+    
+</script>
 @endsection
