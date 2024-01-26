@@ -108,15 +108,29 @@
                                     <div class="form-group">
                                         <label for="validationCustom02" class="col-form-label">
                                             الألوان المتاحة للمنتج </label>
-                                        <select class="form-control colors" multiple="multiple" name="colors[]" value="{{$product->color}}">
+                                        <select class="form-control colors" multiple="multiple" name="colors[]"
+                                            value="{{$product->color}}">
+                                            <option value="{{$product->color}}">"{{$product->color}}" </option>
                                         </select>
-                                        
+
                                         <div class="form-group">
                                             <label for="validationCustom02" class="col-form-label">
                                                 الاحجام المتاحة للمنتج </label>
-                                            <select class="form-control colors" multiple="multiple" name="sizes[]" value="{{$product->size}}">
+                                            <select class="form-control colors" multiple="multiple" name="sizes[]"
+                                                value="{{$product->size}}">
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom05" class="col-form-label pt-0">
+                                            صور المنتج</label>
+
+                                        @foreach($product->images as $image)
+                                        <div class="col-md-3">
+                                            <img src="{{asset($image->image)}}" class="img-fluid" width="500">
+                                            <a href=""><i class="fa fa-trash"></i></a>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
 

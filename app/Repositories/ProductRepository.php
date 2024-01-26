@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Product;
+use App\Models\ProductImage;
+use App\Utils\ImageUpload;
 
 class ProductRepository implements RepositoryInterface
 {
@@ -20,9 +22,29 @@ class ProductRepository implements RepositoryInterface
         return Product::where('id', $id)->firstOrFail();
     }
 
+
+    public function uploadMultiImage ($params, $product)
+    {
+        $images = [];
+        if(isset($params['images'])){
+            $i=0;
+            foreach($params['images'] as $key=>$value){
+                $images[$i]['image'] = ImageUpload::uploadImage($value);
+                $images[$i]['product_id'] = $product->id;
+                $i++;
+            }
+
+            return $images;
+    }
+}
+
     public function store($params)
     {
-        return Product::create($params);
+        $product = Product::create($params);
+        $images =$this->uploadMultiImage($params, $product);
+        $product->images()->createMany($images);
+        return $product;
+        
     }
 
     public function addColor ($product, $params)
@@ -33,7 +55,10 @@ class ProductRepository implements RepositoryInterface
     public function update($id, $params)
     {
         $product = $this->getById($id);
-        return $product->update($params);
+        $product = $product->update($params);
+        $product = $this->getById($id);
+        $images =$this->uploadMultiImage($params, $product);
+        $product->images()->createMany($images);
         
     }
 
