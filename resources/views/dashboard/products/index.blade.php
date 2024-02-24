@@ -68,7 +68,7 @@
                                         <th> الألوان </th>
                                         <th>action</th>
 
-                                    </tr>
+                                    </tr></a>
                                 </thead>
 
                                 <tbody>
@@ -80,6 +80,31 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="{{ Route('dashboard.products.delete') }}" method="POST">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        @csrf
+                        @method('DELETE')
+                        <div class="form-group">
+                            <p>متأكد من الحذف .. ؟؟</p>
+                            @csrf
+                            <input type="hidden" name="id" id="id" >
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">اغلاق</button>
+                        <button type="submit" class="btn btn-danger">حذف </button>
+                    </div>
+                </div>
+            </form>
+
+        
+
     </div>
 
 </div>
@@ -143,7 +168,6 @@
 
         $('#editableTable tbody').on('click', '#deleteBtn', function(argument) {
             var id = $(this).attr("data-id");
-            console.log(id);
             $('#deletemodal #id').val(id);
         })
 </script>

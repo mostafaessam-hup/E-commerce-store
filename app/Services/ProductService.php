@@ -30,7 +30,10 @@ class ProductService
             ->addColumn('category', function ($row) {
                 return $row->category->name;
             })
-            ->rawColumns(['action', 'category'])
+            ->editColumn('name', function ($row) {
+                return '<a href="' . route('dashboard.products.show', $row->id) . '">' . $row->name . '</a>';
+            })
+            ->rawColumns(['action', 'category','name'])
             ->make(true);
     }
 

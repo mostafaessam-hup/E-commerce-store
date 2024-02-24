@@ -9,7 +9,7 @@ Create Category
 @endsection
 
 @section('pagename')
-اضافة منتج
+اضافة قسم
 @endsection
 
 @section('title_page1')

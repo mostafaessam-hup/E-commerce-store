@@ -23,31 +23,33 @@ class ProductRepository implements RepositoryInterface
     }
 
 
-    public function uploadMultiImage ($params, $product)
+    public function uploadMultiImage($params, $product)
     {
         $images = [];
-        if(isset($params['images'])){
-            $i=0;
-            foreach($params['images'] as $key=>$value){
+        if (isset($params['images'])) {
+            $i = 0;
+            foreach ($params['images'] as $key => $value) {
                 $images[$i]['image'] = ImageUpload::uploadImage($value);
                 $images[$i]['product_id'] = $product->id;
                 $i++;
             }
 
             return $images;
+        }
     }
-}
 
     public function store($params)
     {
         $product = Product::create($params);
-        $images =$this->uploadMultiImage($params, $product);
-        $product->images()->createMany($images);
+        $images = $this->uploadMultiImage($params, $product);
+        if ($images !== null) {
+            $product->images()->createMany($images);
+        }
+
         return $product;
-        
     }
 
-    public function addColor ($product, $params)
+    public function addColor($product, $params)
     {
         $product->productColor()->createMany($params['colors']);
     }
@@ -57,9 +59,11 @@ class ProductRepository implements RepositoryInterface
         $product = $this->getById($id);
         $product = $product->update($params);
         $product = $this->getById($id);
-        $images =$this->uploadMultiImage($params, $product);
-        $product->images()->createMany($images);
-        
+        $images = $this->uploadMultiImage($params, $product);
+        if ($images !== null) {
+            $product->images()->createMany($images);
+        }
+        return $product;
     }
 
     public function delete($id)

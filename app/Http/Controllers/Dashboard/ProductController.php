@@ -26,6 +26,12 @@ class ProductController extends Controller
         return view('dashboard.products.index');
     }
 
+    public function show($id)
+    {
+        $product = $this->productService->getById($id, true);
+        return view('dashboard.products.show',compact('product'));
+    }
+
     public function getall()
     {
         return $this->productService->dataTable();
@@ -67,8 +73,9 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function delete(ProductRequest $request)
     {
-        //
+        $this->productService->delete($request->id);
+        return redirect()->route('dashboard.products.index');
     }
 }

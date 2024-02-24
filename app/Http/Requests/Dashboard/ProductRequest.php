@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
             case 'GET':
             case 'DELETE': {
                     return [
-                        'id' => 'required|exists:categories,id',
+                        'id' => 'required|exists:products,id',
                     ];
                 }
 

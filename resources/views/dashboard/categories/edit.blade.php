@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-تعديل منتج
+تعديل قسم
 @endsection
 
 @section('css')
 @endsection
 
 @section('pagename')
-تعديل منتج
+تعديل قسم
 @endsection
 
 @section('title_page1')
