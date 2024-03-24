@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->decimal('price',8,2)->nullable();
             $table->decimal('discount_price',8,2)->nullable();
             $table->foreignId('category_id')->constrained('categories');
             $table->text('color')->nullable();
             $table->text('size')->nullable();
+            $table->integer('quantity')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

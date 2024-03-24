@@ -31,6 +31,7 @@ Route::group(['as' => 'dashboard.'], function () {
     Route::resource('products',ProductController::class)->except('show','destroy');
     Route::delete('products', [ProductController::class, 'delete'])->name('products.delete');
     Route::get('product/{product}', [ProductController::class, 'show'])->name('products.show');
+    Route::get('product/{product}/cart', [ProductController::class, 'cart'])->name('products.cart');
     Route::get('products/ajax', [ProductController::class, 'getAll'])->name('products.getall');
 
 });

@@ -66,6 +66,7 @@
                                         <th>السعر الأساسي</th>
                                         <th>التخفيض الأساسي</th>
                                         <th> الألوان </th>
+                                        <th> الكميه </th>
                                         <th>action</th>
 
                                     </tr></a>
@@ -152,6 +153,11 @@
                     {
                         data: 'color',
                         name: 'color',
+                        className: 'text-center'
+                    },
+                    {
+                        data: 'quantity',
+                        name: 'quantity',
                         className: 'text-center'
                     },
                     {

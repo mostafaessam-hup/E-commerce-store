@@ -53,11 +53,11 @@
                                     @foreach ($errors->all() as $error)
                                     <div class="alert alert-danger">
                                         <ul>
-                                                <li>{{ $error }}</li>
-                                            </ul>
-                                        </div>
-                                        @endforeach
-                                @endif
+                                            <li>{{ $error }}</li>
+                                        </ul>
+                                    </div>
+                                    @endforeach
+                                    @endif
 
                                     <div class="form-group">
                                         <label for="validationCustomtitle" class="col-form-label pt-0">القسم</label>
@@ -104,19 +104,24 @@
                                         <input class="form-control" id="validationCustom02" type="text"
                                             name="discount_price">
                                     </div>
-
                                     <div class="form-group">
                                         <label for="validationCustom02" class="col-form-label">
                                             الألوان المتاحة للمنتج </label>
                                         <select class="form-control colors" multiple="multiple" name="colors[]">
                                         </select>
-                                        
-                                        <div class="form-group">
-                                            <label for="validationCustom02" class="col-form-label">
-                                                الاحجام المتاحة للمنتج </label>
-                                            <select class="form-control colors" multiple="multiple" name="sizes[]">
-                                            </select>
-                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="col-form-label">
+                                            الاحجام المتاحة للمنتج </label>
+                                        <select class="form-control colors" multiple="multiple" name="sizes[]">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="col-form-label">
+                                            الكميه</label>
+                                        <input class="form-control" id="validationCustom02" type="text"
+                                            name="quantity">
                                     </div>
                                     <div class="form-group">
                                         <label for="validationCustom05" class="col-form-label pt-0">

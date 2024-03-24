@@ -44,6 +44,7 @@ class ProductRequest extends FormRequest
                         'sizes.*' => 'nullable|string',
                         'images' => 'nullable|array',
                         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                        'quantity' => 'nullable|numeric'
 
                     ];
                 }
@@ -63,6 +64,8 @@ class ProductRequest extends FormRequest
                         'sizes.*' => 'nullable|string',
                         'images' => 'nullable|array',
                         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                        'quantity' => 'nullable|numeric'
+
                     ];
                 }
         }

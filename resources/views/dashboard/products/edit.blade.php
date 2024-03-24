@@ -112,14 +112,19 @@
                                             value="{{$product->color}}">
                                             <option value="{{$product->color}}">"{{$product->color}}" </option>
                                         </select>
-
-                                        <div class="form-group">
-                                            <label for="validationCustom02" class="col-form-label">
-                                                الاحجام المتاحة للمنتج </label>
-                                            <select class="form-control colors" multiple="multiple" name="sizes[]"
-                                                value="{{$product->size}}">
-                                            </select>
-                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="col-form-label">
+                                            الاحجام المتاحة للمنتج </label>
+                                        <select class="form-control colors" multiple="multiple" name="sizes[]"
+                                            value="{{$product->size}}">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom02" class="col-form-label">
+                                            الكميه</label>
+                                        <input class="form-control" id="validationCustom02" type="integer"
+                                            name="quantity" value="{{$product->quantity}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="validationCustom05" class="col-form-label pt-0">

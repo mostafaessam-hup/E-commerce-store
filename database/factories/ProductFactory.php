@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'image'=>$this->faker->word.'.jpg',
             'price'=>$this->faker->randomNumber(5, false),
             'discount_price'=>$this->faker->randomNumber(5, false),
-            'category_id'=>39
+            'category_id'=>10
         ];
     }
 }

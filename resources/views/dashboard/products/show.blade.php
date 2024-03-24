@@ -124,19 +124,20 @@ product
                     </div>
 
                     <div class="bg-gray py-2 px-3 mt-4">
-                        <h2 class="mb-0">
+                        <h3 class="mb-0">
                             $ {{$product->discount_price}}
-                        </h2>
+                        </h3>
                         <h4 class="mt-0">
-                            <small>$ {{$product->price}} </small>
+                            <del> <small>$ {{$product->price}} </small></del>
                         </h4>
                     </div>
 
                     <div class="mt-4">
+                        <a href="{{route('dashboard.products.cart','product->id')}}">
                         <div class="btn btn-primary btn-lg btn-flat">
                             <i class="fas fa-cart-plus fa-lg mr-2"></i>
                             Add to Cart
-                        </div>
+                        </div></a>
 
                         <div class="btn btn-default btn-lg btn-flat">
                             <i class="fas fa-heart fa-lg mr-2"></i>
