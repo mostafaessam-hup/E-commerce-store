@@ -33,6 +33,17 @@ Route::get('/tables', function () {
     return view('tables');
 });
 
-// Route::get('settings', function () {
-//     return view('dashboard.settings.index');
-// });
+Route::get('tracking/show', function () {
+    return view('dashboard.tracking');
+});
+
+Route::get('tracking', function(){
+    $data = [
+        [51.509, -0.08],
+        [51.503, -0.06],
+        [51.51, -0.047]
+    ];
+    return response()->json($data);
+})->name('tracking');
+
+

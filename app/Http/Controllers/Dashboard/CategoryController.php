@@ -54,7 +54,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, string $id)
     {
         $this->CategoryService->update($id, $request->validated());
-        return redirect()->route('dashboard.categories.index')->with('success', 'تمت الاضافة بنجاح');
+        return redirect()->route('dashboard.categories.index')->with('success', 'تمت التعديل بنجاح');
     }
 
     public function delete(CategoryRequest $request)
